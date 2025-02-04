@@ -1,0 +1,39 @@
+﻿@model AbbouClima.Models.Presupuesto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar presupuesto</h1>
+
+<h3>Estás seguro que quieres borrar este presupuesto</h3>
+<div>
+    <h4>Presupuesto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NºPresupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NºPresupuesto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaPresupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaPresupuesto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImporteTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImporteTotal) €
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Volver al listado</a>
+    </form>
+</div>

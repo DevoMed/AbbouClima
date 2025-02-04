@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AbbouClima.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de clientes <i class="bi bi-people me-3" style="font-size: 50px;"></i></h1>
+<hr />
+<div class="inline-container">
+    <a class="btn btn-dark" asp-action="Create">Crear nuevo cliente</a>
+    <form asp-controller="Clientes" asp-action="Index" method="get">
+        <p>
+            Buscar cliente: <input type="text" name="busqueda" />
+            <input type="submit" value="Buscar" />
+        </p>
+    </form>
+</div>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NIF)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td class ="d-flex gap-2">
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver</a>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                    <a class="btn btn-dark" asp-controller="Presupuestos" asp-action="GetById" asp-route-id="@item.Id">Presupuestos</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

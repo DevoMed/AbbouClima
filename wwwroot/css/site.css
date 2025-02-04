@@ -1,0 +1,159 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    padding-top: 70px;
+}
+
+.form-container {
+    width: auto; /* Ancho del formulario (ajustable) */
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px; /* Espacio interno del formulario */
+    border: 2px solid #ccc; /* Borde alrededor del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo suave */
+}
+.form-container1 {
+    width: auto; /* Ancho del formulario (ajustable) */
+    padding: 20px;
+    margin-left: 35%;
+    margin-right: 35%; /* Espacio interno del formulario */
+    border: 2px solid #ccc; /* Borde alrededor del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo suave */
+}
+.input-row {
+    display: flex;
+    gap: 20px; /* Espacio entre los grupos de inputs */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+    .input-group label {
+        margin-bottom: 5px; /* Espacio entre el label y el input */
+    }
+    .input-group input {
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100% !important;
+        box-sizing: border-box; /* Asegura que todos los inputs tengan el mismo ancho */
+    }
+    .input-group.cliente {
+        flex: 3; 
+    }
+    .input-group.descripcion {
+        flex: 7; 
+    }
+
+    .input-group.cantidad,
+    .input-group.precio {
+        flex: 1;
+    }
+.check {
+    padding-top: 30px;
+    flex: 1;
+}
+
+.custom-select-container select {
+    width: 30% !important; /* Ajusta el select al 100% del contenedor */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="number"] {
+    -webkit-appearance: none; /* Para navegadores basados en WebKit como Chrome, Safari */
+    -moz-appearance: textfield; /* Para Firefox */
+    appearance: none; /* Asegura que las flechas se quiten en todos los navegadores */
+}
+.btnListado {
+    padding: 20px;
+    margin-left: 30px;
+}
+.TituloCreate {
+    padding: 20px;
+    margin-left: 35%;
+}
+
+.row {
+    margin-top: 100px;
+}
+.custom-title {
+    font-size: 4rem; /* Tamaño más grande */
+    font-weight: bold; /* Hacerlo en negrita */
+    color: #333; /* Color personalizado */
+}
+.inline-container {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+}
+
+.inline-container form {
+        margin-left: 100px;
+        padding-top: 20px 
+}
+.inline-container input[type="text"],
+.inline-container input[type="submit"] {
+        margin-right: 5px; /* Espacio entre el input y el botón */
+ }
+
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+    font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+        width: 100%;
+}
+
+.four_zero_four_bg {
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+}
+.four_zero_four_bg h1 {
+        font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+        font-size: 80px;
+}
+
+.link_404 {
+    color: #fff !important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.contant_box_404 {
+    margin-top: -50px;
+}
+

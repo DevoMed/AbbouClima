@@ -1,0 +1,193 @@
+﻿@model Presupuesto
+
+@{
+    ViewData["Title"] = "Crear Presupuesto";
+}
+
+<h2 class ="btnListado">@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post" class="form-container">
+
+    <div class="input-row">
+        <div class="input-group cliente">
+            <label for="ClienteId">Cliente</label>
+            <div class="custom-select-container">
+                <select asp-for="ClienteId" asp-items="ViewBag.Clientes"><option value="" disabled selected>Seleccionar cliente</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion1">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion1" name="Descripcion1"  value="@Model.Descripcion1" required />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad1">Cantidad</label>
+            <input type="number" id="Cantidad1" name="Cantidad1" value="@Model.Cantidad1" min="0" required />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio1">Precio</label>
+            <input type="number" id="Precio1" name="Precio1" value="@Model.Precio1" min="0"   required />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion2">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion2" name="Descripcion2" value="@Model.Descripcion2"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad2">Cantidad</label>
+            <input type="number" id="Cantidad2" name="Cantidad2" value="@Model.Cantidad2" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio2">Precio</label>
+            <input type="number" id="Precio2" name="Precio2" value="@Model.Precio2" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion3">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion3" name="Descripcion3" value="@Model.Descripcion3"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad3">Cantidad</label>
+            <input type="number" id="Cantidad3" name="Cantidad3" value="@Model.Cantidad3" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio3">Precio</label>
+            <input type="number" id="Precio3" name="Precio3" value="@Model.Precio3" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion4">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion4" name="Descripcion4" value="@Model.Descripcion4"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad4">Cantidad</label>
+            <input type="number" id="Cantidad4" name="Cantidad4" value="@Model.Cantidad4" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio4">Precio</label>
+            <input type="number" id="Precio4" name="Precio4" value="@Model.Precio4" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion5">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion5" name="Descripcion5" value="@Model.Descripcion5"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad5">Cantidad</label>
+            <input type="number" id="Cantidad5" name="Cantidad5" value="@Model.Cantidad5" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio5">Precio</label>
+            <input type="number" id="Precio5" name="Precio5" value="@Model.Precio5" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion6">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion6" name="Descripcion6" value="@Model.Descripcion6"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad6">Cantidad</label>
+            <input type="number" id="Cantidad6" name="Cantidad6" value="@Model.Cantidad6" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio6">Precio</label>
+            <input type="number" id="Precio6" name="Precio6" value="@Model.Precio6" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion7">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion7" name="Descripcion7" value="@Model.Descripcion7"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad7">Cantidad</label>
+            <input type="number" id="Cantidad7" name="Cantidad7" value="@Model.Cantidad7" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio7">Precio</label>
+            <input type="number" id="Precio7" name="Precio7" value="@Model.Precio7" min="0"   />
+        </div>
+    </div>
+
+        <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion8">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion8" name="Descripcion8" value="@Model.Descripcion8"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad8">Cantidad</label>
+            <input type="number" id="Cantidad8" name="Cantidad8" value="@Model.Cantidad8" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio8">Precio</label>
+            <input type="number" id="Precio8" name="Precio8" value="@Model.Precio8" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion9">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion9" name="Descripcion9" value="@Model.Descripcion9"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad9">Cantidad</label>
+            <input type="number" id="Cantidad9" name="Cantidad9" value="@Model.Cantidad9" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio9">Precio</label>
+            <input type="number" id="Precio9" name="Precio9" value="@Model.Precio9" min="0"   />
+        </div>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Descripcion10">Descripcion</label>
+            <input type="text" maxlength="200" id="Descripcion10" name="Descripcion10" value="@Model.Descripcion10"  />
+        </div>
+        <div class="input-group cantidad">
+            <label for="Cantidad10">Cantidad</label>
+            <input type="number" id="Cantidad10" name="Cantidad10" value="@Model.Cantidad10" min="0"  />
+        </div>
+        <div class="input-group precio">
+            <label for="Precio10">Precio</label>
+            <input type="number" id="Precio10" name="Precio10" value="@Model.Precio10" min="0"   />
+        </div>
+    </div>
+    <div class="input-row">
+        <div class="input-group descripcion">
+            <label for="Observaciones">Observaciones</label>
+            <input type="text" maxlength="200" id="Observaciones" name="Observaciones" value="@Model.Observaciones" />
+        </div>
+        <div class=" check">
+        <label for="IncludeIVA">Incluir IVA</label>
+        <input asp-for="IncludeIVA" type="checkbox" class="form-check-input" />
+    </div>
+        <div class="input-group precio">
+            <label for="Validez">Validez</label>
+            <input type="number" id="Validez" name="Validez" value="@Model.Validez" min="0"   />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2 mb-4">Generar PDF</button> | <button type="reset" class="btn btn-outline-info mt-2 mb-4">Borrar </button>
+</form>
+<div class="btnListado">
+    <p>
+        <a class="btn btn-dark mt-4" asp-action="Index">Volver al listado</a>
+    </p>
+</div>
+
+
+

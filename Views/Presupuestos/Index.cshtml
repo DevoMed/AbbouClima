@@ -1,0 +1,86 @@
+﻿@model IEnumerable<AbbouClima.Models.Presupuesto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de presupuestos<i class="bi bi-file-earmark-bar-graph me-3" style="font-size: 50px;"></i></h1>
+<hr />
+<div class="inline-container">
+    <a class="btn btn-dark" asp-action="Create">Crear nuevo presupuesto</a>
+    <form asp-controller="Presupuestos" asp-action="Index" method="get">
+        <p>
+            Buscar Nº de Presupuesto: <input type="text" name="busqueda" />
+            <input type="submit" value="Buscar" />
+        </p>
+    </form>
+</div>
+<hr />
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"] <a class="btn btn-dark" href="@TempData["PDFUrl"]" target="_blank" style="margin-left: 20px;">Ver <i class="bi bi-filetype-pdf"></i></a></div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NºPresupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente.NIF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPresupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enviado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImporteTotal)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NºPresupuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.NIF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPresupuesto)
+            </td>
+            <td>
+                @Html.Raw(item.Enviado ? "<span style='color:green;'>Sí</span>" : "<span style='color:red;'>No</span>")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImporteTotal) €
+            </td>
+            <td>
+              <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver presupuesto</a>
+              <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+              <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Borrar</a> 
+             </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-outline-dark" asp-controller="Clientes" asp-action="Index">Ir  a Clientes</a>
+</p>

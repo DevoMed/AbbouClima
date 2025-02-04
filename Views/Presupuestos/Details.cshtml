@@ -1,0 +1,67 @@
+﻿@model AbbouClima.Models.Presupuesto
+
+@{
+    ViewData["Title"] = "Details";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"] <a class="btn btn-dark" href="@TempData["PDFUrl"]" target="_blank" style="margin-left: 20px;">Ver <i class="bi bi-filetype-pdf"></i></a></div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<h1>Detalles del presupuesto</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NºPresupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NºPresupuesto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaPresupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaPresupuesto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enviado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.Enviado ? "<span style='color:green;'>Sí</span>" : "<span style='color:red;'>No</span>")
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalSinIVA) 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalSinIVA) €
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImporteTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImporteTotal) €
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success" asp-action="AbrirPDFDetalles" target="_blank" asp-route-filePath="@($"{Model.Cliente.Nombre}\\{Model.Cliente.Nombre}-{Model.NºPresupuesto}")">Ver <i class="bi bi-filetype-pdf"></i></a> |
+    <a class="btn btn-info" asp-action="EnviarPresupuesto" asp-route-id="@Model.Id">Enviar <i class="bi bi-filetype-pdf"></i></a> |
+    <a class="btn btn-dark" asp-action="GenerarFactura" asp-route-id="@Model.Id">Generar factura <i class="bi bi-filetype-pdf"></i></a> 
+</</div>
+
+<div class="form-group mt-4">
+    <a class="btn btn-primary" asp-action="Index" asp-route-id="@Model.ClienteId">Volver al listado</a>
+ </div>
